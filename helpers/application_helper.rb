@@ -5,8 +5,8 @@ helpers do
     "Hello #{name}!"
   end
 
-  def link_to(text, url)
-    "<a href='#{url}'>#{text}</a>".html_safe
+  def link_to(text, url, options = {})
+    "<a href='#{url}' alt='#{text}' class='#{options[:class]}'>#{text}</a>".html_safe
   end
 
   def current_user

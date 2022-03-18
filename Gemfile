@@ -11,5 +11,5 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 
 
-gem "byebug", group: :development
+gem 'byebug', group: :development
 gem 'dotenv', group: :development
