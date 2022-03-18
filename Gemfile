@@ -1,10 +1,15 @@
 source 'https://rubygems.org'
 
 # Required to use some advanced features of# Sinatra, like namespaces
+# Required to use some advanced features of# Sinatra, like namespaces
+gem 'activesupport'
+gem 'json'
+gem 'jwt'
 gem 'mongoid'
 gem 'puma'
 gem 'sinatra'
-# Required to use some advanced features of# Sinatra, like namespaces
 gem 'sinatra-contrib'
-gem 'jwt'
-gem 'json'
+
+
+gem "byebug", group: :development
+gem 'dotenv', group: :development

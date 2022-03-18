@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
-require_relative './books'
+# Open Routes
+require_relative './open/users'
+# Secure Routes
+require_relative './secure/books'
+require_relative './secure/me'
+require_relative './secure/users'
 
 get '/' do
   @hello = greet

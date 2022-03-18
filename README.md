@@ -11,7 +11,7 @@
 
 ```shell
 cd db
-RACK_ENV=development ruby seeds.rb
+APP_ENV=development ruby seeds.rb
 ```
 
 ## Usage
