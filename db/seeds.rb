@@ -3,7 +3,8 @@
 require 'mongoid'
 require 'sinatra'
 require 'active_support/message_encryptor'
-require 'dotenv/load'
+require 'dotenv' if settings.development?
+Dotenv.load('../.env')
 
 # DB Setup
 Mongoid.load! 'mongoid.config'
