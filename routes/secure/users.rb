@@ -2,7 +2,7 @@
 
 namespace '/users' do
   # Logout session
-  post '/sign_out' do
+  post '/logout' do
     session[:user_id] = nil
 
     request.cookies.clear

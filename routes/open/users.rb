@@ -13,11 +13,6 @@ namespace '/users' do
     erb 'users/sign_in'.to_sym, layout: :default
   end
 
-  # Sign Up
-  get '/sign_up' do
-    erb 'users/sign_up'.to_sym, layout: :default
-  end
-
   # Post sign in
   post '/sign_in' do
     @current_user = User.find_by(email: params[:email])
@@ -29,6 +24,29 @@ namespace '/users' do
       redirect '/'
     else
       redirect 'users/sign_in', error: 'Invalid email or password'
+    end
+  end
+
+  # Sign Up
+  get '/sign_up' do
+    erb 'users/sign_up'.to_sym, layout: :default
+  end
+
+  # Post sign up
+  post '/sign_up' do
+    # Make sure the email is not already in use
+    redirect 'users/sign_up', error: 'Email already in use' if User.where(email: params[:email]).any?
+    # Create user and save
+    @user = User.new(name: params[:name],
+                     email: params[:email],
+                     password: encrypt_password(params[:password]),
+                     admin: false)
+
+    if @user.save
+      session[:user_id] = @user.id
+      redirect '/'
+    else
+      redirect 'users/sign_up', error: 'Invalid email or password'
     end
   end
 end
