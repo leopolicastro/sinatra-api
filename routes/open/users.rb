@@ -1,13 +1,21 @@
 # frozen_string_literal: true
 
+before '/users/sign_*' do
+  if current_user
+    session[:user_id] = @current_user.id
+    redirect '/'
+  end
+end
+
 namespace '/users' do
   # New session
   get '/sign_in' do
-    if current_user
-      session[:user_id] = @current_user.id
-      redirect '/'
-    end
     erb 'users/sign_in'.to_sym, layout: :default
+  end
+
+  # Sign Up
+  get '/sign_up' do
+    erb 'users/sign_up'.to_sym, layout: :default
   end
 
   # Post sign in

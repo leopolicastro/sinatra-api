@@ -5,6 +5,10 @@ helpers do
     "Hello #{name}!"
   end
 
+  def link_to(text, url)
+    "<a href='#{url}'>#{text}</a>".html_safe
+  end
+
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
   rescue Mongoid::Errors::DocumentNotFound
