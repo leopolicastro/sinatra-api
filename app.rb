@@ -1,15 +1,8 @@
-require 'active_support/message_encryptor'
-require 'active_support/isolated_execution_state'
-require 'active_support/time'
+# frozen_string_literal: true
+
 require 'sinatra'
-require 'sinatra/namespace'
-require 'mongoid'
-require 'securerandom'
+require_relative './config/requirements'
 
-require 'dotenv/load' if settings.development?
-require 'byebug' if settings.development?
-
-# -or- require 'sysrandom/securerandom'
 set :session_secret, ENV.fetch('SESSION_SECRET') { SecureRandom.hex(32) }, expires: 24.hours.from_now
 
 # API Setup

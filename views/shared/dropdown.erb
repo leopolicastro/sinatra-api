@@ -1,0 +1,12 @@
+<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+  <% if user %>
+    <li>
+      <form method="post" action="/users/sign_out">
+        <button type="submit" class="dropdown-item">Logout</button>
+      </form>
+    </li>
+  <% else %>
+    <li><a class="dropdown-item" href="/users/sign_in">Login</a></li>
+    <li><a class="dropdown-item" href="#">Sign Up</a></li>
+  <% end %>
+</ul>

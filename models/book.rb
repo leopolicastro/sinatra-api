@@ -4,6 +4,8 @@ class Book
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  belongs_to :user
+
   field :title, type: String
   field :author, type: String
   field :isbn, type: String

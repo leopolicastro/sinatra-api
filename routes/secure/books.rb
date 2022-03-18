@@ -2,7 +2,7 @@
 
 namespace '/books' do
   get '' do
-    @books = Book.all
+    @books = Book.where(user_id: session[:user_id])
     erb 'books/index'.to_sym, layout: :default
   end
 

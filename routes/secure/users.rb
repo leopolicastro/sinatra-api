@@ -2,13 +2,11 @@
 
 namespace '/users' do
   # Logout session
-  delete '/sign_out' do
-    if current_user
-      session.clear
+  post '/sign_out' do
+    session[:user_id] = nil
 
-      request.cookies.clear
+    request.cookies.clear
 
-    end
     erb 'users/sign_in'.to_sym, layout: :default
   end
 end

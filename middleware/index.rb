@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-after '*' do
+before '*' do
   session[:user_id] = @current_user.id if @current_user
 end
 

@@ -16,19 +16,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Account
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <% if current_user %>
-              <li>
-                <form method="post" action="/users/sign_out">
-                  <input name="_method" type="hidden" value="delete" />
-                  <button type="submit" class="dropdown-item">Logout</button>
-                </form>
-              </li>
-            <% else %>
-              <li><a class="dropdown-item" href="/users/sign_in">Login</a></li>
-              <li><a class="dropdown-item" href="#">Sign Up</a></li>
-            <% end %>
-          </ul>
+          <%= erb "shared/dropdown".to_sym, locals: {user: current_user} %>
         </li>
       </ul>
     </div>
