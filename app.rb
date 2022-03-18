@@ -7,6 +7,7 @@ require 'mongoid'
 require 'securerandom'
 
 require 'dotenv/load' if settings.development?
+require 'byebug' if settings.development?
 
 # -or- require 'sysrandom/securerandom'
 set :session_secret, ENV.fetch('SESSION_SECRET') { SecureRandom.hex(32) }, expires: 24.hours.from_now

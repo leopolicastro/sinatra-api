@@ -2,6 +2,7 @@
 
 class Book
   include Mongoid::Document
+  include Mongoid::Timestamps
 
   field :title, type: String
   field :author, type: String
@@ -15,6 +16,4 @@ class Book
   index({ isbn: 1 }, { unique: true, name: 'isbn_index' })
 
   scope :title, ->(title) { where(title: /^#{title}/) }
-  scope :isbn, ->(isbn) { where(isbn: isbn) }
-  scope :author, ->(author) { where(author: author) }
 end

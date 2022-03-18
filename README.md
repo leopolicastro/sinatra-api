@@ -17,3 +17,7 @@ APP_ENV=development ruby seeds.rb
 ## Usage
 
 - ruby server.rb
+
+## Reference
+
+- https://docs.mongodb.com/mongoid/current/tutorials/getting-started-sinatra/
