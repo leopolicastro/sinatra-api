@@ -1,5 +1,6 @@
 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
   <% if user %>
+    <li><a class="dropdown-item" href="/users/profile">Profile</a></li>
     <li>
       <form method="post" action="/users/logout">
         <button type="submit" class="dropdown-item">Logout</button>

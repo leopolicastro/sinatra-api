@@ -2,7 +2,7 @@
 
 helpers do
   def greet(name = 'World')
-    "Hello #{name}!"
+    "Hello #{@current_user&.name || name}!"
   end
 
   def link_to(text, url, options = {})

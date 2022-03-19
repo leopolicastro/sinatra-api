@@ -15,3 +15,7 @@ end
 before '/users/sign_out' do
   authenticate!
 end
+
+before '/users/profile' do
+  authenticate!
+end

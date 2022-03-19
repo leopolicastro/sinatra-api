@@ -1,0 +1,14 @@
+<div class="container mx-auto">
+  <form method="POST" action="/users/profile" class="shadow rounded border p-5 mx-auto">
+    <div class="text-center fs-3 mb-3 border-bottom">Profile</div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" value="<%= @current_user.name %>">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="<%= @current_user.email %>">
+    </div>
+    <button type="submit" class="btn btn-outline-dark">Update</button>
+  </form>
+</div>
