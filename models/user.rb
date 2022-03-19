@@ -14,6 +14,7 @@ class User
   validates :email, presence: true
   validates :password, presence: true
 
-  index({ email: 'text' })
+  index({ email: 1 }, { unique: true })
+
   scope :admin, -> { where(admin: true) }
 end
