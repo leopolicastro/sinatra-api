@@ -19,7 +19,7 @@ namespace '/users' do
 
     if @current_user.nil?
       redirect 'users/sign_in', error: 'Invalid email or password'
-    elsif params[:password] == decrypt_password(@current_user.password)
+    elsif check_password(@current_user.password, params[:password])
       session[:user_id] = @current_user.id
       redirect '/'
     else

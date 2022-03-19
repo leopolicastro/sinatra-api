@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require 'active_support/message_encryptor'
+require 'bcrypt'
+
 require 'active_support/isolated_execution_state'
 require 'active_support/time'
 

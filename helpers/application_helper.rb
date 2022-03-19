@@ -20,17 +20,11 @@ helpers do
   end
 
   def encrypt_password(password)
-    crypt.encrypt_and_sign(password)
+    BCrypt::Password.create(password)
   end
 
-  def decrypt_password(encrypted_pwd)
-    crypt.decrypt_and_verify(encrypted_pwd)
-  end
-
-  private
-
-  def crypt
-    key = ENV.fetch('SESSION_SECRET')
-    ActiveSupport::MessageEncryptor.new(key[0..31])
+  def check_password(encrypted_pwd, password)
+    encrypted = BCrypt::Password.new(encrypted_pwd)
+    encrypted == password
   end
 end

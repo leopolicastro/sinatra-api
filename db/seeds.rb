@@ -2,7 +2,7 @@
 
 require 'mongoid'
 require 'sinatra'
-require 'active_support/message_encryptor'
+require 'bcrypt'
 require 'dotenv' if settings.development?
 Dotenv.load('../.env')
 
@@ -10,16 +10,7 @@ Dotenv.load('../.env')
 Mongoid.load! 'mongoid.config'
 
 def encrypt_password(password)
-  crypt.encrypt_and_sign(password)
-end
-
-def decrypt_password(encrypted_pwd)
-  crypt.decrypt_and_verify(encrypted_pwd)
-end
-
-def crypt
-  key = ENV.fetch('SESSION_SECRET')
-  ActiveSupport::MessageEncryptor.new(key[0..31])
+  BCrypt::Password.create(password)
 end
 
 require_relative '../models/index'
