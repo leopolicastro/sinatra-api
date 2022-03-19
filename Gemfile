@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 # Required to use some advanced features of# Sinatra, like namespaces
 # Required to use some advanced features of# Sinatra, like namespaces
-gem 'bcrypt'
 gem 'activesupport'
+gem 'bcrypt'
 gem 'json'
 gem 'mongoid'
 gem 'puma'

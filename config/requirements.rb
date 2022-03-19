@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-require 'bcrypt'
-
 require 'active_support/isolated_execution_state'
 require 'active_support/time'
-
+require 'bcrypt'
 require 'mongoid'
 require 'securerandom'
 require 'sinatra/namespace'

@@ -5,6 +5,7 @@ class Book
   include Mongoid::Timestamps
 
   belongs_to :user
+  embeds_many :comments
 
   field :title, type: String
   field :author, type: String
