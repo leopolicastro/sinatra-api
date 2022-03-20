@@ -18,7 +18,7 @@
   <input type="submit" />
 </form>
 <div class="d-flex justify-content-center align-items-center p-5 flex-column">
-  <% @book.comments.each do |comment| %>
+  <% @book.comments.order(created_ad: :desc).each do |comment| %>
     <div class="border rounded p-3 my-3 w-100"><%= comment.body %></div>
   <% end %>
 </div>

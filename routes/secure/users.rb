@@ -13,6 +13,7 @@ namespace '/users' do
   # Logout session
   post '/logout' do
     session[:user_id] = nil
+    @notice = 'You have successfully logged out'
 
     request.cookies.clear
 

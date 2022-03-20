@@ -13,7 +13,12 @@ namespace '/books' do
 
   post '/:book_id/comments' do
     @book = Book.find(params[:book_id])
-    @book.comments.create(body: params['body'])
-    redirect "/books/#{@book.id}/"
+    if @book.comments.create(body: params['body'])
+      session[:success] = 'Comment added'
+      redirect "/books/#{@book.id}/"
+    else
+      session[:danger] = 'Error adding comment'
+      redirect '/books'
+    end
   end
 end

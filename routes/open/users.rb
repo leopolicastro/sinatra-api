@@ -21,6 +21,7 @@ namespace '/users' do
       redirect 'users/sign_in', error: 'Invalid email or password'
     elsif check_password(@current_user.password, params[:password])
       session[:user_id] = @current_user.id
+      session[:notice] = 'You have successfully logged in'
       redirect '/'
     else
       redirect 'users/sign_in', error: 'Invalid email or password'
@@ -43,6 +44,7 @@ namespace '/users' do
                      admin: false)
 
     if @user.save
+      @notice = 'You have successfully signed up'
       session[:user_id] = @user.id
       redirect '/'
     else
