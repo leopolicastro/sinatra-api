@@ -5,6 +5,7 @@ class User
   include Mongoid::Timestamps
 
   has_many :books
+  has_many :todos
 
   field :name, type: String
   field :email, type: String

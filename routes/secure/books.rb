@@ -2,7 +2,7 @@
 
 namespace '/books' do
   get '' do
-    @books = Book.where(user_id: session[:user_id])
+    @books = Book.all
     erb 'books/index'.to_sym, layout: :default
   end
 
@@ -13,7 +13,7 @@ namespace '/books' do
 
   post '/:book_id/comments' do
     @book = Book.find(params[:book_id])
-    if @book.comments.create(body: params['body'])
+    if @book.comments.create(body: params['body'], user_id: session[:user_id])
       session[:success] = 'Comment added'
       redirect "/books/#{@book.id}/"
     else

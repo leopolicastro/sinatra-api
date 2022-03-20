@@ -7,6 +7,7 @@ class Comment
   embedded_in :book
 
   field :body, type: String
+  field :user_id, type: String
 
   validates :body, presence: true
 end
