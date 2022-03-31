@@ -6,12 +6,12 @@
 
 ## Setup
 
-- bundle install
-- Seed DB:
-
 ```shell
+cp .env.sample .env
+bundle install
 cd db
 APP_ENV=development ruby seeds.rb
+cd ..
 ```
 
 ## Usage

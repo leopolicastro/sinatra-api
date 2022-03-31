@@ -20,7 +20,8 @@ namespace '/todos' do
       complete: false
     )
     session[:success] = 'Todo added'
-    erb 'todos/show'.to_sym, layout: :default
+    @todos = current_user.todos
+    erb 'todos/index'.to_sym, layout: :default
   end
 
   get '/:id/edit' do
@@ -36,8 +37,9 @@ namespace '/todos' do
       description: params[:description],
       complete: params[:complete] == 'true'
     )
+    @todos = current_user.todos
     session[:success] = 'Todo updated'
-    redirect "/todos/#{@todo.id}"
+    redirect '/todos'
   end
 
   post '/:id/delete' do
