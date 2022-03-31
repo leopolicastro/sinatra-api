@@ -4,7 +4,6 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  has_many :books
   has_many :todos
 
   field :name, type: String

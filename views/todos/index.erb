@@ -1,6 +1,8 @@
 <h1>Todos</h1>
-<% @todos.each do |book| %>
-  <div>
-    <%= @todo.title %>
-  </div>
+<div class="border p-3 shadow rounded-lg w-50 mx-auto">
+  <%= erb "todos/form".to_sym, locals: {url: "/todos"} %>
+</div>
+<% @todos.each do |todo| %>
+  <%= erb "todos/todo".to_sym, locals: {todo: todo }%>
+</div>
 <% end %>

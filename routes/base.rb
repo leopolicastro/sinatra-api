@@ -3,8 +3,9 @@
 # Open Routes
 require_relative './open/users'
 # Secure Routes
-require_relative './secure/books'
+
 require_relative './secure/me'
+require_relative './secure/todos'
 require_relative './secure/users'
 
 get '/' do

@@ -1,0 +1,4 @@
+<form method="post" action="<%= url %>" class="mx-auto">
+  <input type="text" name="title" class="form-control my-1" placeholder="Title", value="<%= @todo&.title %>" />
+  <input type="submit" class="btn btn-primary " value="<%= url.include?('edit') ? "Update" : "Create" %>" />
+</form>

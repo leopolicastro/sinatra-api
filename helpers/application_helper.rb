@@ -5,6 +5,18 @@ helpers do
     "Hello #{@current_user&.name || name}!"
   end
 
+  def check_or_x(bool)
+    if bool
+      <<~HTML
+        Complete: <i class='fas fa-check-circle text-success'></i>
+      HTML
+    else
+      <<~HTML
+        Complete: <i class='fas fa-times text-danger'></i>
+      HTML
+    end
+  end
+
   def link_to(text, url, options = {})
     "<a href='#{url}' alt='#{text}' class='#{options[:class]}'>#{text}</a>".html_safe
   end
