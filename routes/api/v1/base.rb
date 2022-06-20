@@ -6,7 +6,7 @@ namespace "/api/v1" do
   end
 
   get "/" do
-    {greeting: greet, env: settings.development?}
+    {greeting: greet}
   end
 
   after do
