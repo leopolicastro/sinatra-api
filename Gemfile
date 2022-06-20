@@ -1,18 +1,21 @@
 source "https://rubygems.org"
 
-# Required to use some advanced features of# Sinatra, like namespaces
-# Required to use some advanced features of# Sinatra, like namespaces
 gem "activesupport"
 gem "bcrypt"
 gem "json"
 gem "mongoid"
 gem "puma"
+gem "rack"
 gem "sinatra"
 gem "sinatra-contrib"
 
-group :development, :test do
-  gem "byebug"
-  gem "dotenv"
+group :test, :development do
+  gem "coderay"
+  gem "faker"
+  gem "factory_bot"
   gem "rspec"
+  gem "rack-test"
+  gem "dotenv"
+  gem "byebug"
   gem "standard", require: false
 end

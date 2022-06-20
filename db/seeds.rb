@@ -15,7 +15,7 @@ end
 
 require_relative "../models/index"
 
-require_relative "../helpers/application_helper"
+require_relative "../helpers/index"
 
 puts "Resetting database..."
 

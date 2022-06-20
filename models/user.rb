@@ -4,7 +4,7 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  has_many :todos
+  has_many :todos, dependent: :destroy
 
   field :name, type: String
   field :email, type: String

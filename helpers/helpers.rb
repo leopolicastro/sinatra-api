@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-helpers do
+module Helpers
   def greet(name = "World")
     "Hello #{@current_user&.name || name}!"
   end
