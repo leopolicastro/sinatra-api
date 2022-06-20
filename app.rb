@@ -17,7 +17,7 @@ require_relative "models/index"
 require_relative "middleware/index"
 
 # API Routes
-require_relative "api/v1/base"
+require_relative "routes/api/v1/base"
 
 # View Routes
-require_relative "routes/base"
+require_relative "routes/client/base"
