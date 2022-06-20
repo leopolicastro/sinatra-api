@@ -7,7 +7,7 @@ RSpec.describe Todo, type: :model do
     Todo.delete_all
   end
 
-  it "is valid with valid attributes" do
+  it "has a working factory" do
     todo = build(:todo)
     expect(todo).to be_valid
   end

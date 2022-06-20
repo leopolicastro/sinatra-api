@@ -21,6 +21,7 @@ namespace "/todos" do
     )
     session[:success] = "Todo added"
     @todos = current_user.todos
+    status 201
     erb :"todos/index", layout: :default
   end
 
@@ -38,6 +39,7 @@ namespace "/todos" do
       complete: params[:complete] == "true"
     )
     @todos = current_user.todos
+    # status 302
     session[:success] = "Todo updated"
     redirect "/todos"
   end

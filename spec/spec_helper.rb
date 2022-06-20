@@ -16,6 +16,7 @@
 
 ENV["APP_ENV"] = "test"
 require_relative "../server"
+require_relative "./support/index"
 require "rspec"
 require "rack/test"
 
