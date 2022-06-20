@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
-namespace '/users' do
+namespace "/users" do
   # GET profile
-  get '/profile' do
-    erb 'users/profile'.to_sym, layout: :default
+  get "/profile" do
+    erb :"users/profile", layout: :default
   end
 
-  post '/profile' do
+  post "/profile" do
     @current_user.update(name: params[:name], email: params[:email])
-    erb 'users/profile'.to_sym, layout: :default
+    erb :"users/profile", layout: :default
   end
   # Logout session
-  post '/logout' do
+  post "/logout" do
     session[:user_id] = nil
-    @notice = 'You have successfully logged out'
+    @notice = "You have successfully logged out"
 
     request.cookies.clear
 
-    erb 'users/sign_in'.to_sym, layout: :default
+    erb :"users/sign_in", layout: :default
   end
 end

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'active_support/isolated_execution_state'
-require 'active_support/time'
-require 'bcrypt'
-require 'mongoid'
-require 'securerandom'
-require 'sinatra/namespace'
+require "active_support/isolated_execution_state"
+require "active_support/time"
+require "bcrypt"
+require "mongoid"
+require "securerandom"
+require "sinatra/namespace"
 
-if settings.development?
-  require 'dotenv/load'
-  require 'byebug'
+if settings.development? || settings.test?
+  require "dotenv/load"
+  require "byebug"
 end

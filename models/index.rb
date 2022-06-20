@@ -1,4 +1,4 @@
-require 'mongoid'
+require "mongoid"
 
-require_relative './user'
-require_relative './todo'
+require_relative "./user"
+require_relative "./todo"

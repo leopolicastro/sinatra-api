@@ -1,2 +1,2 @@
-require_relative './requirements'
-require_relative './setup'
+require_relative "./requirements"
+require_relative "./setup"

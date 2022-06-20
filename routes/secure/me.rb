@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-namespace '/users' do
-  get '/me' do
+namespace "/users" do
+  get "/me" do
     @user = @current_user
-    erb 'users/show'.to_sym, layout: :default
+    erb :"users/show", layout: :default
   end
 end

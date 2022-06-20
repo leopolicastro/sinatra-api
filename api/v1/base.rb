@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-namespace '/api/v1' do
+namespace "/api/v1" do
   before do
-    content_type 'application/json'
+    content_type "application/json"
   end
 
-  get '/' do
-    { greeting: greet, env: settings.development? }
+  get "/" do
+    {greeting: greet, env: settings.development?}
   end
 
   after do

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 helpers do
-  def greet(name = 'World')
+  def greet(name = "World")
     "Hello #{@current_user&.name || name}!"
   end
 
@@ -28,7 +28,7 @@ helpers do
   end
 
   def authenticate!
-    redirect '/users/sign_in' unless current_user
+    redirect "/users/sign_in" unless current_user
   end
 
   def encrypt_password(password)

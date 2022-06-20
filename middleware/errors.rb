@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 error do
-  @danger = "Error - #{env['sinatra.error'].message}"
+  @danger = "Error - #{env["sinatra.error"].message}"
   erb :index, layout: :default
 end
 
-before '*' do
+before "*" do
   if session[:notice]
     @notice = session[:notice]
     session[:notice] = nil
