@@ -16,7 +16,15 @@ cd ..
 
 ## Usage
 
-- ruby server.rb
+```shell
+ruby server.rb
+```
+
+## Testing
+
+```shell
+bundle exec rspec
+```
 
 ## Reference
 

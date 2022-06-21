@@ -13,15 +13,18 @@
 # it.
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-
 ENV["APP_ENV"] = "test"
-require_relative "../server"
-require_relative "./support/index"
+
+require "simplecov"
+SimpleCov.start
+
 require "rspec"
 require "rack/test"
-
 require "factory_bot"
 require "faker"
+
+require_relative "../server"
+require_relative "./support/index"
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods

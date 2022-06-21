@@ -26,4 +26,13 @@ RSpec.describe "SecureUsersController", type: :controller do
     expect(last_response).to be_ok
     expect(last_response.body).to include("Sign In")
   end
+
+  it "redirects to home page if uses is logged in and visits sign in page" do
+    @user = create(:user)
+    post "/users/sign_in", email: @user.email, password: "abc123"
+    get "/users/sign_in"
+    expect(last_response).to be_redirect
+    follow_redirect!
+    expect(last_response).to be_ok
+  end
 end

@@ -20,6 +20,7 @@ RSpec.describe "TodosController", type: :controller do
     post "/todos", title: "New Todo", due_date: "2020-01-01", description: "This is a new Todo"
     expect(last_response.status).to eq(201)
     expect(last_response.body).to include("New Todo")
+    expect(session[:success]).to eq("Todo added")
   end
 
   it "renders the todos by id" do

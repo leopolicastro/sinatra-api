@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
+# :nocov:
 error do
   @danger = "Error - #{env["sinatra.error"].message}"
   erb :index, layout: :default
 end
+# :nocov:
 
 before "*" do
   if session[:notice]
@@ -14,6 +16,7 @@ before "*" do
     @success = session[:success]
     session[:success] = nil
   end
+  # :nocov:
   if session[:warning]
     @warning = session[:warning]
     session[:warning] = nil
@@ -22,4 +25,5 @@ before "*" do
     @danger = session[:danger]
     session[:danger] = nil
   end
+  # :nocov:
 end

@@ -15,16 +15,19 @@ namespace "/users" do
 
   # Post sign in
   post "/sign_in" do
-    @current_user = User.find_by(email: params[:email])
+    begin
+      @current_user = User.find_by(email: params[:email])
+    rescue Mongoid::Errors::DocumentNotFound
+      @danger = "Invalid email or password"
+      return erb :"users/sign_in", layout: :default
+    end
 
-    if @current_user.nil?
-      redirect "users/sign_in", error: "Invalid email or password"
-    elsif check_password(@current_user.password, params[:password])
+    if check_password(@current_user.password, params[:password])
       session[:user_id] = @current_user.id
       session[:notice] = "You have successfully logged in"
-      redirect "/"
+      return redirect "/"
     else
-      redirect "users/sign_in", error: "Invalid email or password"
+      return redirect "users/sign_in", error: "Invalid email or password"
     end
   end
 

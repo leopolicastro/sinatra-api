@@ -18,4 +18,5 @@ group :test, :development do
   gem "dotenv"
   gem "byebug"
   gem "standard", require: false
+  gem "simplecov", require: false
 end
